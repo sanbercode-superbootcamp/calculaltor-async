@@ -9,4 +9,17 @@ function add(a, b, callback) {
   }, 1000);
 }
 
+function addPromise(a, b) {
+  return new Promise((resolve, reject) => {
+    add(a, b, (err, res) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve(res);
+    });
+  });
+}
+
 exports.add = add;
+exports.addPromise = addPromise;
