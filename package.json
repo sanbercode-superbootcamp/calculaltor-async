@@ -4,6 +4,7 @@
   "description": "calculator but async",
   "main": "index.js",
   "scripts": {
+    "start": "node .",
     "test": "mocha"
   },
   "author": "muhammad hasan",
