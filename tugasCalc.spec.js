@@ -6,32 +6,6 @@ chai.use(chaiAsPromsied)
 
 
 describe("calculator", function() {
-    describe("add", function() {
-        this.timeout(10000);
-        this.slow(10000);
-
-        it ("harusnya gini doang bisa lah pertambahan biasa", function(done) {
-            add(1, 2, (err, result) => {
-                expect(result).to.be.eq(3);
-                add(9, 2, (err, result) => {
-                    expect(result).to.be.eq(11);
-                    done();
-                });
-            });
-        });
-
-        context("input tydac valid", function() {
-            it("harusnya keluar error ih", function(done) {
-                add(null, 2, (err, result) => {
-                    expect(err).to.be.exist;
-                    expect(result).to.be.not.exist;
-                    expect(err.message).to.be.eq(ERROR_MSG);
-                    done();
-                });
-            });
-        });
-    });
-
     describe("add promise", function() {
         this.timeout(10000);
         this.slow(10000);
@@ -75,6 +49,24 @@ describe("calculator", function() {
         this.timeout(10000);
         this.slow(10000);
 
+        it("harusnya sih bisa pengurangan doang", function() {
+            return expect(subtractPromise(5, 2))
+            .to.be.eventually.eq(3)
+            .then(() => expect(subtractPromise(9, 2))
+            .to.be.eventually.eq(7))
+            .then(() => expect(subtractPromise(17, -9))
+            .to.be.eventually.eq(26));
+        });
+
+        it("harusnya sih bisa pengurangan doang", async function() {
+            let result = await subtractPromise(5, 2);
+            expect(result).to.be.eq(3)
+            result = await subtractPromise(9, 2);
+            expect(result).to.be.eq(7)
+            result = await subtractPromise(17, -9);
+            expect(result).to.be.eq(26)
+        });
+
         it("harusnya sih bisa pengurangan doang", async function() {
             const result = await Promise.all([
                 subtractPromise(10, 2),
@@ -96,6 +88,24 @@ describe("calculator", function() {
         this.timeout(10000);
         this.slow(10000);
 
+        it("harusnya sih bisa perkalian doang", function() {
+            return expect(timesPromise(1, 2))
+            .to.be.eventually.eq(2)
+            .then(() => expect(timesPromise(9, 2))
+            .to.be.eventually.eq(18))
+            .then(() => expect(timesPromise(7, -9))
+            .to.be.eventually.eq(-63));
+        });
+
+        it("harusnya sih bisa perkalian doang", async function() {
+            let result = await timesPromise(1, 2);
+            expect(result).to.be.eq(2)
+            result = await timesPromise(9, 2);
+            expect(result).to.be.eq(18)
+            result = await timesPromise(7, -9);
+            expect(result).to.be.eq(-63)
+        });
+
         it("harusnya sih bisa perkalian doang", async function() {
             const result = await Promise.all([
                 timesPromise(4, 2),
@@ -116,6 +126,24 @@ describe("calculator", function() {
     describe("divide promise", function() {
         this.timeout(10000);
         this.slow(10000);
+
+        it("harusnya sih bisa pembagian doang", function() {
+            return expect(dividePromise(10, 2))
+            .to.be.eventually.eq(5)
+            .then(() => expect(dividePromise(9, 3))
+            .to.be.eventually.eq(3))
+            .then(() => expect(dividePromise(54, -9))
+            .to.be.eventually.eq(-6));
+        });
+
+        it("harusnya sih bisa pembagian doang", async function() {
+            let result = await dividePromise(10, 2);
+            expect(result).to.be.eq(5)
+            result = await dividePromise(9, 3);
+            expect(result).to.be.eq(3)
+            result = await dividePromise(54, -9);
+            expect(result).to.be.eq(-6)
+        });
 
         it("harusnya sih bisa pembagian doang", async function() {
             const result = await Promise.all([
