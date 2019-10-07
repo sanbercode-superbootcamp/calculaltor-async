@@ -1,18 +1,11 @@
-const { addPromise } = require('./calculator');
-const { expect } = require('chai');
+const { addPromise, ERROR_MSG } = require("./calculator");
+const { expect } = require("chai");
 
-addPromise(1, 2)
-.then((result) => addPromise(2, result))
-.then((result) => addPromise(3, result))
-.then((result) => addPromise(4, result))
-.then((result) => {
-  console.log(result);
-  expect(result).to.be.eq(12);
-});
-
-addPromise(1, 1)
-.then((result) => addPromise(1, result))
-.then((result) => {
-  console.log(result);
-  expect(result).to.be.eq(3);
+Promise.all([
+  addPromise(1,1, 3000),
+  addPromise(1,null, 1000)
+]).then(results => {
+}).catch(err => {
+  expect(err).to.be.exist;
+  expect(err.message).to.be.eq(ERROR_MSG);
 });

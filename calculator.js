@@ -1,17 +1,19 @@
-function add(a, b, callback) {
+const ERROR_MSG = 'a & b is mandatory';
+
+function add(a, b, timeout, callback) {
   if (!a || !b) {
-    callback(new Error('a & b is mandatory'));
+    callback(new Error(ERROR_MSG));
     return
   }
   const c = a + b;
   setTimeout(() => {
     callback(null, c);
-  }, 1000);
+  }, timeout || 1000);
 }
 
-function addPromise(a, b) {
+function addPromise(a, b, timeout) {
   return new Promise((resolve, reject) => {
-    add(a, b, (err, res) => {
+    add(a, b, timeout, (err, res) => {
       if (err) {
         reject(err);
         return;
@@ -21,5 +23,6 @@ function addPromise(a, b) {
   });
 }
 
+exports.ERROR_MSG = ERROR_MSG;
 exports.add = add;
 exports.addPromise = addPromise;
