@@ -2,7 +2,7 @@ const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 const { expect } = chai;
-const { add, addPromise } = require('./calculator');
+const { add, addPromise, ERROR_MSG } = require('./calculator');
 
 describe('calculator', function(){
     describe('add', function(){
