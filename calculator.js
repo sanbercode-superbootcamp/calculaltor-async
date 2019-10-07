@@ -93,6 +93,9 @@ function dividePromise(a, b){
 }
 
 exports.add = add;
+exports.minus = minus;
+exports.times = times;
+exports.divide = divide;
 exports.addPromise = addPromise;
 exports.minusPromise = minusPromise;
 exports.timesPromise = timesPromise;

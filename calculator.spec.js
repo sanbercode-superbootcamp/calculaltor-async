@@ -2,12 +2,12 @@ const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 const { expect } = chai;
-const { add, addPromise, ERROR_MSG } = require('./calculator');
+const { add, minus, times, divide, addPromise, minusPromise, timesPromise, dividePromise, ERROR_MSG } = require('./calculator');
 
-describe('calculator', function(){
+describe.only('calculator', function(){
+    this.timeout(10000)
+    this.slow(10000)
     describe('add', function(){
-        this.timeout(10000);
-        this.slow(10000);
         it('can process adding operation', function(done){
             add(1,2, (err, result) => {
                 expect(result).to.be.eq(3);
@@ -28,10 +28,75 @@ describe('calculator', function(){
         });
     });
 
-    describe("add promise", function(){
-        this.timeout(10000);
-        this.slow(10000);
+    describe('minus', function(){
+        it('can process adding operation', function(done){
+            minus(5,2, (err, result) => {
+                expect(result).to.be.eq(3);
+                minus(9,2, (err, result) => {
+                    expect(result).to.be.eq(7);
+                    done();
+                });
+            });
+        });
+        context('invalid input', function(){
+            it('appears error', function(done){
+                minus(null, 2, (err, result) => {
+                    expect(err).to.be.exist;
+                    expect(result).to.be.not.exist;
+                    done();
+                });
+            });
+        });
+    });
 
+    describe('times', function(){
+        it('can process adding operation', function(done){
+            times(1,2, (err, result) => {
+                expect(result).to.be.eq(2);
+                times(9,2, (err, result) => {
+                    expect(result).to.be.eq(18);
+                    done();
+                });
+            });
+        });
+        context('invalid input', function(){
+            it('appears error', function(done){
+                times(null, 2, (err, result) => {
+                    expect(err).to.be.exist;
+                    expect(result).to.be.not.exist;
+                    done();
+                });
+            });
+        });
+    });
+
+    describe('divide', function(){
+        it('can process adding operation', function(done){
+            divide(4,2, (err, result) => {
+                expect(result).to.be.eq(2);
+                divide(8,2, (err, result) => {
+                    expect(result).to.be.eq(4);
+                    done();
+                });
+            });
+        });
+        context('invalid input', function(){
+            it('appears error', function(done){
+                divide(null, 2, (err, result) => {
+                    expect(err).to.be.exist;
+                    expect(result).to.be.not.exist;
+                    done();
+                });
+            });
+        });
+    });
+});
+
+describe("calculator with promises", function() {
+    this.timeout(10000);
+    this.slow(10000);
+
+    describe("add promise", function(){
         it("can do adding operation", function(){
             return expect(addPromise(1,2))
                 .to.be.eventually.eq(3)
@@ -39,7 +104,7 @@ describe('calculator', function(){
                 .to.be.eventually.eq(11));
         });
 
-        it.only("can do adding operation 2", async function(){
+        it("can do adding operation 2", async function(){
             let result = await addPromise(1, 2);
             expect(result).to.be.eq(3)
             result = await addPromise(9, 2);
@@ -53,4 +118,4 @@ describe('calculator', function(){
             });
         });
     });
-});
+})
