@@ -1,7 +1,11 @@
 function add(a, b, callback) {
+  if (!a || !b) {
+    callback(new Error('a & b is mandatory'));
+    return
+  }
   const c = a + b;
   setTimeout(() => {
-    callback(c);
+    callback(null, c);
   }, 1000);
 }
 
