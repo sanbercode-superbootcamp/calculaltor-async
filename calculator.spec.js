@@ -11,5 +11,13 @@ describe('calculator', function(){
                 expect(result).to.be.eq(11);
             });
         });
+        context('invalid input', function(){
+            it('appears error', function(){
+                add(null, 2, (err, result) => {
+                    expect(err).to.be.exist;
+                    expect(result).to.be.not.exist;
+                })
+            })
+        })
     });
 });
