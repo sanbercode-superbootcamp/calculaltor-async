@@ -8,7 +8,7 @@ function add(a, b, callback) {
     const c =  a + b;
     setTimeout(() => {
         callback(null, c);
-    }, 100);
+    }, 1000);
 }
 
 function subtract(a, b, callback) {
@@ -19,7 +19,7 @@ function subtract(a, b, callback) {
     const c =  a - b;
     setTimeout(() => {
         callback(null, c);
-    }, 100);
+    }, 1000);
 }
 
 function times(a, b, callback) {
@@ -57,7 +57,7 @@ function addPromise(a, b) {
     });
 }
 
-function substractPromise(a, b) {
+function subtractPromise(a, b) {
     return new Promise((resolve, reject) => {
         subtract(a, b, (err, res) => {
             if (err) {
