@@ -1,0 +1,15 @@
+{
+  "name": "calculator-async",
+  "version": "1.0.0",
+  "description": "calculator but async",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "muhammad hasan",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.1"
+  }
+}
