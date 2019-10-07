@@ -1,4 +1,4 @@
-const { add, addPromise, subtract, subtractPromise, times, timesPromise, divide, dividePromise, ERROR_MSG } = require('./tugasCalc');
+const { addPromise, subtractPromise, timesPromise, dividePromise, ERROR_MSG } = require('./tugasCalc');
 const { expect } = require('chai');
 const chai = require('chai');
 const chaiAsPromsied = require('chai-as-promised');
