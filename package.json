@@ -1,16 +1,18 @@
 {
-  "name": "calculator-async",
+  "name": "asyc-calculator",
   "version": "1.0.0",
-  "description": "calculator but async",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node index.js"
   },
-  "author": "muhammad hasan",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0"
+  },
   "devDependencies": {
-    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "mocha": "^6.2.1"
   }
