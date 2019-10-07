@@ -1,4 +1,4 @@
-const { addPromise, ERROR_MSG } = require("./calculator");
+const { addPromise, ERROR_MSG } = require("./lib/calculator");
 const { expect } = require("chai");
 
 Promise.all([
