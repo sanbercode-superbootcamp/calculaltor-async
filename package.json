@@ -1,0 +1,17 @@
+{
+  "name": "calculator-async",
+  "version": "1.0.0",
+  "description": "Tugas 7 Oktober",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node ."
+  },
+  "author": "rismayf",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^6.2.1"
+  }
+}
