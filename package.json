@@ -1,17 +1,19 @@
 {
-  "name": "calculator-async",
+  "name": "challenge-async-calculator",
   "version": "1.0.0",
-  "description": "calculator but async",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node .",
     "test": "mocha"
   },
-  "author": "muhammad hasan",
-  "license": "MIT",
+  "author": "hasannabil",
+  "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
-    "chai-as-promised": "^7.1.1",
     "mocha": "^6.2.1"
+  },
+  "dependencies": {
+    "chai-as-promised": "^7.1.1"
   }
 }
