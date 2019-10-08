@@ -1,44 +1,42 @@
-const { addPromise } = require('./lib/calculator');
+const { add,sub,div,mul,addPromise,subPromise,divPromise,mulPromise,ERROR_MSG } = require('./lib/calculator');
 const { expect } = require('chai');
 
-function handleResult (err, res){
-    expect(err).to.be.not.exist;
-    expect(res).to.be.exist;
-    expect(res).to.be.eq(3)
-}
+addPromise(1, 2)
+.then((result) => addPromise(2, result))
+.then((result) => {
+    console.log('hasil tambah = ',result);
+    expect(result).to.be.eq(5);
+});
 
-function handleErrorResult (err, res){
+mulPromise(1, 2)
+.then((result) => addPromise(2, result))
+.then((result) => {
+    console.log('hasil kali = ',result);
+    expect(result).to.be.eq(4);
+});
+
+subPromise(1, 2)
+.then((result) => subPromise(2, result))
+.then((result) => {
+    console.log('hasil kurang = ',result);
+    expect(result).to.be.eq(3);
+});
+
+divPromise(1, 2)
+.then((result) => divPromise(2, result))
+.then((result) => {
+    console.log('hasil bagi = ',result);
+    expect(result).to.be.eq(4);
+});
+
+Promise.all([
+    addPromise(null,1),
+    subPromise(1,null),
+    divPromise(null,1),
+    mulPromise(1,null)
+  ]).then(results => {
+  }).catch(err => {
     expect(err).to.be.exist;
-    expect(res).to.be.not.exist;
-}
-
-function printResult(result) {
-    console.log(result);
-}
-
-// addPromise(1, 2)
-// .then((result) => addPromise(2, result))
-// .then((result) => addPromise(3, result))
-// .then((result) => addPromise(4, result))
-// .then((result) => {
-//     console.log(result);
-//     expect(result).to.be.eq(12);
-// });
-
-// addPromise(1, 1)
-// .then((result) => addPromise(1, result))
-// .then((result) => {
-//     console.log(result);
-//     expect(result).to.be.eq(3);
-// });
-
-
-
-// let result = 0;
-// add(1,2, function(res) {
-//     result = res;
-// });
-// expect(result).to.be.eq(0);
-// setTimeout(() => {
-//     expect(result).to.be.eq(3);
-// }, 2000);
+    expect(err.message).to.be.eq(ERROR_MSG);
+    console.log(err);
+  });
