@@ -1,14 +1,15 @@
 {
-  "name": "calculator-async",
+  "name": "calculator-async-febry",
   "version": "1.0.0",
-  "description": "calculator but async",
+  "description": "tugas hari 5 calculator async",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node ."
   },
-  "author": "muhammad hasan",
+  "author": "febry",
   "license": "MIT",
+  "dependencies": {},
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
