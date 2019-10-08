@@ -1,14 +1,14 @@
 {
-  "name": "calculator-async",
+  "name": "calculator-async-rizki",
   "version": "1.0.0",
-  "description": "calculator but async",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node .",
     "test": "mocha"
   },
-  "author": "muhammad hasan",
-  "license": "MIT",
+  "author": "mochmdrizki",
+  "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
