@@ -1,14 +1,17 @@
 {
   "name": "calculator-async",
   "version": "1.0.0",
-  "description": "calculator but async",
+  "description": "calculator with async",
   "main": "index.js",
   "scripts": {
     "start": "node .",
     "test": "mocha"
   },
-  "author": "muhammad hasan",
-  "license": "MIT",
+  "keywords": [
+    "async"
+  ],
+  "author": "hilmihi",
+  "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
