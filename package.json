@@ -1,15 +1,15 @@
 {
   "name": "calculator-async",
   "version": "1.0.0",
-  "description": "calculator but async",
+  "description": "Tugas 7 Oktober",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node ."
   },
-  "author": "muhammad hasan",
-  "license": "MIT",
-  "devDependencies": {
+  "author": "rismayf",
+  "license": "ISC",
+  "dependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "mocha": "^6.2.1"

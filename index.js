@@ -1,11 +1,17 @@
-const { addPromise, ERROR_MSG } = require("./lib/calculator");
-const { expect } = require("chai");
+const { plusPromise, minusPromise, multiPromise, divPromise } = require('./calculator')
+// const { expect } = require("chai")
 
-Promise.all([
-  addPromise(1,1, 3000),
-  addPromise(1,null, 1000)
-]).then(results => {
-}).catch(err => {
-  expect(err).to.be.exist;
-  expect(err.message).to.be.eq(ERROR_MSG);
-});
+function printResult(result) {
+    console.log(result)
+}
+
+multiPromise(9, 3)
+    .then(printResult)
+divPromise(9, 3)
+    .then(printResult)
+plusPromise(9, 3)
+    .then(printResult)
+minusPromise(9, 3)
+    .then(printResult)
+
+// harusnya hasilnya 12 6 27 3
