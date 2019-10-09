@@ -1,17 +1,19 @@
 {
-  "name": "calculator-async",
+  "name": "tugas-3-nandyo",
   "version": "1.0.0",
-  "description": "calculator but async",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "node .",
-    "test": "mocha"
-  },
-  "author": "muhammad hasan",
-  "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "chai": "^4.2.0",
+    "promise": "^8.0.3"
+  },
+  "devDependencies": {
     "chai-as-promised": "^7.1.1",
     "mocha": "^6.2.1"
-  }
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
 }
