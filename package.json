@@ -1,14 +1,25 @@
 {
+<<<<<<< HEAD
+  "name": "calculator-async-reza",
+  "version": "1.0.0",
+  "description": "",
+=======
   "name": "calculator-async",
   "version": "1.0.0",
   "description": "calculator but async",
+>>>>>>> 5d9593f11984af76f7d4b73b04fe59fb6414c6f0
   "main": "index.js",
   "scripts": {
     "start": "node .",
     "test": "mocha"
   },
+<<<<<<< HEAD
+  "author": "Reza Yogi Andria",
+  "license": "ISC",
+=======
   "author": "muhammad hasan",
   "license": "MIT",
+>>>>>>> 5d9593f11984af76f7d4b73b04fe59fb6414c6f0
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
